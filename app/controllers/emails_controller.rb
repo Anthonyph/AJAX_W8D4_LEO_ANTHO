@@ -38,10 +38,18 @@ class EmailsController < ApplicationController
     
       def update
         @email = Email.find(params[:id])
-        @email.update_attribute(:read, true)
+        if @email.read == true
+        @email.update_attribute(:read, false)
         respond_to do |format|          
-          format.html {redirect_to emails_path}
-          format.js { }
+            format.html {redirect_to emails_path}
+            format.js { }
+          end
+        else
+          @email.update_attribute(:read, true)
+          respond_to do |format|          
+            format.html {redirect_to emails_path}
+            format.js { }
+          end
 
         end
       end
