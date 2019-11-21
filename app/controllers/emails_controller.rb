@@ -11,6 +11,8 @@ class EmailsController < ApplicationController
             format.html { redirect_to root_path }
             format.js { }
           end
+          
+        
     
         else
           redirect_to root_path
@@ -21,6 +23,13 @@ class EmailsController < ApplicationController
 
       def show 
         @email = Email.find(params[:id])
+                        
+        respond_to do |format|          
+          format.html {redirect_to emails_path}
+          format.js { }
+
+        end
+        
       end
     
       def edit
@@ -36,11 +45,13 @@ class EmailsController < ApplicationController
     
       def index
         @emails = Email.all
+
+        
       end
     
       def destroy
-        @task = Task.find(params[:id])
-        @task.destroy
+        @email = Email.find(params[:id])
+        @email.destroy
         respond_to do |format|
           format.html { redirect_to root_path }
           format.js { }

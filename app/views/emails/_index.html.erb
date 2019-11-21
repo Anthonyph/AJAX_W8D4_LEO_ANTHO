@@ -1,0 +1,6 @@
+<div id = divdetail>
+<div><h4><%= email.object%></h4></div><br>
+<div><%= email.body%></div>
+<center><a href='/emails/<%= email.id%>' data-method= 'DELETE' data-remote= 'true'><%= fa_icon "trash" %></a>
+<a href='/emails/<%= email.id%>' data-method= 'DELETE' data-remote= 'true'><%= fa_icon "envelope" %></a>
+</center>
