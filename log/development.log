@@ -18470,3 +18470,94 @@ Processing by EmailsController#show as JS
 Completed 200 OK in 18ms (Views: 9.4ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-11-21 16:40:55 +0100
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/leovanel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by EmailsController#index as HTML
+  Rendering emails/index.html.erb within layouts/application
+  [1m[36mEmail Load (0.8ms)[0m  [1m[34mSELECT "emails".* FROM "emails"[0m
+  ↳ app/views/emails/index.html.erb:25
+  Rendered emails/index.html.erb within layouts/application (30.8ms)
+  Rendered layouts/_navbar.html.erb (5.5ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+Completed 200 OK in 605ms (Views: 586.5ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-21 16:41:03 +0100
+Processing by EmailsController#index as HTML
+  Rendering emails/index.html.erb within layouts/application
+  [1m[36mEmail Load (0.6ms)[0m  [1m[34mSELECT "emails".* FROM "emails"[0m
+  ↳ app/views/emails/index.html.erb:25
+  Rendered emails/index.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+Completed 200 OK in 64ms (Views: 61.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/emails" for 127.0.0.1 at 2019-11-21 16:41:08 +0100
+Processing by EmailsController#create as JS
+  Parameters: {"utf8"=>"✓", "commit"=>"Recevoir un email"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/emails_controller.rb:9
+  [1m[36mEmail Create (0.8ms)[0m  [1m[32mINSERT INTO "emails" ("object", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["object", "The Line of Beauty"], ["body", "Project managers never ask Chuck Norris for estimations... ever."], ["created_at", "2019-11-21 15:41:08.889104"], ["updated_at", "2019-11-21 15:41:08.889104"]]
+  ↳ app/controllers/emails_controller.rb:9
+  [1m[35m (22.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/emails_controller.rb:9
+  Rendering emails/create.js.erb
+  Rendered emails/_email.html.erb (0.6ms)
+  Rendered emails/create.js.erb (26.1ms)
+Completed 200 OK in 142ms (Views: 32.3ms | ActiveRecord: 23.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-11-21 16:41:41 +0100
+Processing by EmailsController#index as HTML
+  Rendering emails/index.html.erb within layouts/application
+  [1m[36mEmail Load (0.8ms)[0m  [1m[34mSELECT "emails".* FROM "emails"[0m
+  ↳ app/views/emails/index.html.erb:25
+  Rendered emails/index.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_navbar.html.erb (2.8ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+Completed 200 OK in 70ms (Views: 66.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/emails" for 127.0.0.1 at 2019-11-21 16:41:43 +0100
+Processing by EmailsController#create as JS
+  Parameters: {"utf8"=>"✓", "commit"=>"Recevoir un email"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/emails_controller.rb:9
+  [1m[36mEmail Create (0.6ms)[0m  [1m[32mINSERT INTO "emails" ("object", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["object", "No Longer at Ease"], ["body", "Chuck Norris is immutable. If something's going to change, it's going to have to be the rest of the universe."], ["created_at", "2019-11-21 15:41:43.511118"], ["updated_at", "2019-11-21 15:41:43.511118"]]
+  ↳ app/controllers/emails_controller.rb:9
+  [1m[35m (14.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/emails_controller.rb:9
+  Rendering emails/create.js.erb
+  Rendered emails/_email.html.erb (1.3ms)
+  Rendered emails/create.js.erb (4.2ms)
+Completed 200 OK in 32ms (Views: 10.1ms | ActiveRecord: 15.0ms)
+
+
+Started POST "/emails" for 127.0.0.1 at 2019-11-21 16:41:45 +0100
+Processing by EmailsController#create as JS
+  Parameters: {"utf8"=>"✓", "commit"=>"Recevoir un email"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/emails_controller.rb:9
+  [1m[36mEmail Create (0.6ms)[0m  [1m[32mINSERT INTO "emails" ("object", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["object", "A Catskill Eagle"], ["body", "Chuck Norris' programs occupy 150% of CPU, even when they are not executing."], ["created_at", "2019-11-21 15:41:45.990726"], ["updated_at", "2019-11-21 15:41:45.990726"]]
+  ↳ app/controllers/emails_controller.rb:9
+  [1m[35m (11.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/emails_controller.rb:9
+  Rendering emails/create.js.erb
+  Rendered emails/_email.html.erb (0.9ms)
+  Rendered emails/create.js.erb (3.9ms)
+Completed 200 OK in 29ms (Views: 10.0ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/emails/10" for 127.0.0.1 at 2019-11-21 16:41:50 +0100
+Processing by EmailsController#show as JS
+  Parameters: {"id"=>"10"}
+  [1m[36mEmail Load (0.6ms)[0m  [1m[34mSELECT  "emails".* FROM "emails" WHERE "emails"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/emails_controller.rb:25
+  Rendering emails/show.js.erb
+  Rendered emails/_index.html.erb (1.5ms)
+  Rendered emails/show.js.erb (4.1ms)
+Completed 200 OK in 28ms (Views: 8.7ms | ActiveRecord: 1.0ms)
+
+
