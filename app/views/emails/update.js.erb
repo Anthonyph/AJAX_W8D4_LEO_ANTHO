@@ -1,0 +1,12 @@
+document.getElementById("showdiv").insertAdjacentHTML("beforeend", "<%= j render 'index', email: @email %>");
+var readmail = document.getElementById('p.<%= @email.id%>')
+console.log(readmail)
+
+function f1(){ 
+readmail.style.fontWeight= "normal";
+}
+readmail.addEventListener("click", f1, true)
+console.log(readmail)
+f1()
+
+

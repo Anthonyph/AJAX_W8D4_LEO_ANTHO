@@ -1,4 +1,4 @@
-<center><h1> Bienvenue sur Caramail ! youpi ! </h1>
+<center><h1> Bienvenue sur Caramail ! </h1>
 <br>
 <%= form_tag url_for(action: 'create'), method: "post", remote: true do %>
     <%= submit_tag "Recevoir un email" %>
@@ -21,13 +21,15 @@
   </thead>
  
   <tbody >
-  
     <%@emails.each do |mail| %>
     <tr id=<%=mail.id%>>
-    
+        <% if (mail.read == false) %>
       <th scope="row"><%= mail.id%></th>
-      <td id=object.<%= mail.id%>><a href='/emails/<%=mail.id%>' data-method='GET' data-remote ='true' ><%=mail.object%></a></td>
-      
+      <td id=object.<%= mail.id%>><a href='/emails/<%=mail.id%>' data-method='PUT' data-remote ='true' ><p id=p.<%= mail.id%> style="font-weight: 950;" ><%=mail.object%></p></a></td>
+      <% else %>
+      <th scope="row"><%= mail.id%></th>
+      <td id=object.<%= mail.id%>><a href='/emails/<%=mail.id%>'  data-method='PUT' data-remote ='true' ><p><%=mail.object%></p></a></td>
+      <%end%>
     <%end%>
     </tr>
    
@@ -37,7 +39,7 @@
 </div>
 
 <div id =showdiv , style= "Width:50%;border:solid 1px">
-<h3 style='text-align:center'> Clique pour lire ton email </h3>
+<h4 style='text-align:center'> Clique pour lire ton email </h4>
 </div>
 </div>
 

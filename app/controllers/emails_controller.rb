@@ -37,10 +37,13 @@ class EmailsController < ApplicationController
       end
     
       def update
-        @mail = Email.find(params[:id])
-        @mail.update(task_params)
-        redirect_to tasks_path
-        flash[:notice] = "Task edited"
+        @email = Email.find(params[:id])
+        @email.update_attribute(:read, true)
+        respond_to do |format|          
+          format.html {redirect_to emails_path}
+          format.js { }
+
+        end
       end
     
       def index
