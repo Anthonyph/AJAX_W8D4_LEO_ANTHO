@@ -7,7 +7,7 @@
   <li class="category-title"><%= category.title  %></li>
   <div class="card">
     <ul  id="<%= category.title %>">
-      <% category.tasks.each do |task|  %>
+      <% category.  tasks.each do |task|  %>
       <li id="<%= task.id %>">
         <%= task.title  %>
         <% unless task.deadline.nil? %><% end %>

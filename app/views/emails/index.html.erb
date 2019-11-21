@@ -1,0 +1,32 @@
+<center><h1> Bienvenue sur Caramail ! youpi ! </h1>
+<br>
+<%= form_tag url_for(action: 'create'), method: "post", remote: true do %>
+    <%= submit_tag "Recevoir un email" %>
+    <%end%>
+    <br>
+    </center>
+<% # data-remote= 'true' %>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Liste des emails</th>
+      <th scope="col">Email sélectionné</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%@emails.each do |mail| %>
+    <tr id=tr.<%=mail.id%>>
+    
+      <th scope="row"><%= mail.id%></th>
+      <td id=object.<%=mail.id%>><%= mail.object%></td>
+      <td><% mail.body%></td>
+    <%end%>
+    </tr>
+   
+  </tbody>
+</table>
+<ul>
+
+  
+    
