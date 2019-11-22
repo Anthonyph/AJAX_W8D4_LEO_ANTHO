@@ -1,22 +1,43 @@
-var readmail = document.getElementById('p.<%= @email.id%>');
-console.log(readmail)
-readmail.style.fontWeight= "950";
 
-<%if @email.read == false %>
 
-document.getElementById("showdiv").insertAdjacentHTML("beforeend", "<%= j render 'index', email: @email %>");
-var readmail = document.getElementById('p.<%= @email.id%>')
-function f1(){ 
-readmail.style.fontWeight= "normal";
-}
 
-<% else %>
+  if ((document.getElementById('p.<%= @email.id%>').style.fontWeight != "normal")&&(document.getElementById("divdetail"))){
 
-var readmail = document.getElementById('p.<%= @email.id%>')
+    document.getElementById("showdiv").insertAdjacentHTML("beforeend", "<%= j render 'index', email: @email %>");
+    var readmail = document.getElementById('p.<%= @email.id%>');
+    
+    console.log(readmail.style.fontWeight);
+    console.log(document.getElementById("divdetail"));
+    console.log ("if");
+    console.log (<%=@email.read%>);
+  }
+  else if ((document.getElementById('p.<%= @email.id%>').style.fontWeight != "normal")&&((document.getElementById("divdetail")==null)||(document.getElementById("divdetail")==undefined))){ 
+    
+    document.getElementById("showdiv").insertAdjacentHTML("beforeend", "<%= j render 'index', email: @email %>");
+    var readmail = document.getElementById('p.<%= @email.id%>');
+    readmail.style.fontWeight= "normal";    
+    console.log(readmail.style.fontWeight);
+    console.log(document.getElementById("divdetail"));
+    console.log ("elseif");
+    console.log (<%=@email.read%>);
+  } 
+  else if  ((document.getElementById('p.<%= @email.id%>').style.fontWeight == "normal")&&(document.getElementById("divdetail"))){
+    var readmail = document.getElementById('p.<%= @email.id%>');
+    readmail.style.fontWeight= "950";
+    console.log(readmail.style.fontWeight);
+    console.log(document.getElementById("divdetail"));
+    console.log ("else2");
+    console.log (<%=@email.read%>);
+  }
+  else  
+    {
+    document.getElementById("showdiv").insertAdjacentHTML("beforeend", "<%= j render 'index', email: @email %>");
+    console.log(readmail.style.fontWeight);
+    console.log(document.getElementById("divdetail"));
+    console.log ("else");
+    console.log (<%=@email.read%>)
+  }
+ 
+ 
 
-function f2(){ 
-readmail.style.fontWeight= "950";
-}
-f2()
 
-<%end%>

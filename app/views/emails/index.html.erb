@@ -28,7 +28,8 @@
       <td id=object.<%= mail.id%>><a href='/emails/<%=mail.id%>' data-method='PUT' data-remote ='true' ><p id=p.<%= mail.id%> style="font-weight: 950;" ><%=mail.object%></p></a></td>
       <% else %>
       <th scope="row"><%= mail.id%></th>
-      <td id=object.<%= mail.id%>><a href='/emails/<%=mail.id%>'  data-method='PUT' data-remote ='true' ><p><%=mail.object%></p></a></td>
+      <td id=object.<%= mail.id%>><a href='/emails/<%=mail.id%>'  data-method='PUT' data-remote ='true' ><p id=p.<%= mail.id%> style="font-weight: normal;" ><%=mail.object%></p></a></td>
+      
       <%end%>
     <%end%>
     </tr>
@@ -39,7 +40,6 @@
 </div>
 
 <div id =showdiv , style= "Width:50%;border:solid 1px">
-<h4 style='text-align:center'> Clique pour lire ton email </h4>
 </div>
 </div>
 
