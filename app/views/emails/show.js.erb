@@ -1,17 +1,1 @@
-var readmail = document.getElementById('p.<%= @email.id%>');
-console.log(readmail)
-<%if @email.read == false %>
-readmail.style.fontWeight= "";
 document.getElementById("showdiv").insertAdjacentHTML("beforeend", "<%= j render 'index', email: @email %>");
-function f1(){
-readmail.style.fontWeight= "normal";
-}
-f1()
-<% else %>
-document.getElementById("showdiv").insertAdjacentHTML("beforeend", "<%= j render 'index', email: @email %>");
-function f2(){
-readmail.style.fontWeight= "";
-readmail.style.fontWeight= "950";
-}
-f2()
-<%end%>
